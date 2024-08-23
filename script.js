@@ -1,6 +1,6 @@
 function updateRemoveButtons() {
     const removeButtons = document.querySelectorAll('.ingredient-row .btn-danger');
-    if (document.querySelectorAll('.ingredient-row').length <= 3) {
+    if (document.querySelectorAll('.ingredient-row').length <= 1) {
         removeButtons.forEach(button => button.disabled = true);
     } else {
         removeButtons.forEach(button => button.disabled = false);
@@ -43,8 +43,8 @@ async function submitForm() {
         }
     }
 
-    if (ingredientes.length < 3) {
-        alert('Por favor, preencha pelo menos três campos!');
+    if (ingredientes.length < 1) {
+        alert('Por favor, preencha pelo menos um campos!');
         return;
     }
 
@@ -72,6 +72,9 @@ async function submitForm() {
         }
         responseDiv.style.display = 'block';
         loadingDiv.style.display = 'none';
+        
+        // Chame a função do ler.js para mostrar o botão de leitura
+        handleResponseAndShowButton();
     } catch (error) {
         const responseDiv = document.getElementById('response');
         const loadingDiv = document.getElementById('typewriter');
@@ -79,6 +82,9 @@ async function submitForm() {
         responseDiv.innerHTML = `<p>Erro: ${error.message}</p>`;
         responseDiv.style.display = 'block';
         loadingDiv.style.display = 'none';
+        
+        // Chame a função do ler.js para mostrar o botão de leitura
+        handleResponseAndShowButton();
     }
 }
 
@@ -88,5 +94,3 @@ function loadingAndSubmit() {
 
     submitForm();
 }
-
-document.addEventListener('DOMContentLoaded', updateRemoveButtons);

@@ -6,6 +6,7 @@
     <title>Problem</title>
     <link rel="stylesheet" href="style.css">
     <meta property="og:type" content="article" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="shortcut icon" href="/img/NO_logo.png" type="image/x-icon">
 </head>
 <body>
@@ -28,6 +29,7 @@
         <div class="container1">
             <section class="recipe-form">
                 <h2>Fale Conosco para oferecer uma solução para o seu problema.</h2>
+                <i class="fa fa-volume-off" aria-hidden="true" id="speakButton" onclick="speakText()" style="display: none;"></i>
                 <div class="form-group">
                     <div id="ingredients">
                         <div class="ingredient-row">
@@ -50,7 +52,8 @@
                 </div>
                 <div class="meio" style="display: flex; justify-content: center; margin-top: 10px;">
                     <button class="button" onclick="loadingAndSubmit();" style="width: 300px;">Gerar Solução</button>
-                </div>                
+                </div>
+                <p style="color: red; text-align: center;">As informações São geradas por IA pode cometer erros. Considere verificar informações importantes.</p>
             </section>
             <section id="response" class="response">
                 <div id="typewriter" class="typewriter" style="display: none;">
@@ -64,9 +67,11 @@
     <footer>
         <div class="container">
             <p>© 2024 Gerador de Soluções</p>
+            <p style="font-size: 8px;">Não temos responsabilidade se as soluções por acasso acabem em homicidio...</p>
         </div>
     </footer>
     <script src="./script.js"></script>
+    <script src="./ler.js"></script>
     <script src="mobile-navbar.js"></script>
 </main>
 </body>
