@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem</title>
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:type" content="article" />
+    <link rel="shortcut icon" href="/img/NO_logo.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+          <a class="logo" href="/">No Problem</a>
+          <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <ul class="nav-list">
+            <li><a href="/index.html">Início</a></li>
+            <li><a href="/sobre.html">Sobre</a></li>
+          </ul>
+        </nav>
+      </header>
+    <main>
+        <a href="/sobre.html"><article class="detalhe"></article></a>
+        <div class="container1">
+            <section class="recipe-form">
+                <h2>Fale Conosco para oferecer uma solução para o seu problema.</h2>
+                <div class="form-group">
+                    <div id="ingredients">
+                        <div class="ingredient-row">
+                            <input type="text" class="ingredient ingredient-input" placeholder=" " id="problema">
+                            <label class="label" for="problema">Problema</label>
+                            <button class="btn-danger" onclick="removeIngredient(this)" disabled>Excluir</button>
+                        </div>
+                        <div class="ingredient-row">
+                            <input type="text" class="ingredient ingredient-input" placeholder=" " id="detalhes">
+                            <label class="label" for="detalhes">Detalhes</label>
+                            <button class="btn-danger" onclick="removeIngredient(this)" disabled>Excluir</button>
+                        </div>
+                        <div class="ingredient-row">
+                            <input type="text" class="ingredient ingredient-input" placeholder=" " id="complementos">
+                            <label class="label" for="complementos">Complementos</label>
+                            <button class="btn-danger" onclick="removeIngredient(this)" disabled>Excluir</button>
+                        </div>
+                    </div>
+                    <button class="button" onclick="addIngredient()" style="margin-top: 10px;">Mais Detalhes</button>
+                </div>
+                <div class="meio" style="display: flex; justify-content: center; margin-top: 10px;">
+                    <button class="button" onclick="loadingAndSubmit();" style="width: 300px;">Gerar Solução</button>
+                </div>                
+            </section>
+            <section id="response" class="response">
+                <div id="typewriter" class="typewriter" style="display: none;">
+                    <div class="slide"><i></i></div>
+                    <div class="paper"></div>
+                    <div class="keyboard"></div>
+                </div>
+            </section>
+
+        </div>
+    <footer>
+        <div class="container">
+            <p>© 2024 Gerador de Soluções</p>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script src="mobile-navbar.js"></script>
+</main>
+</body>
+</html>
